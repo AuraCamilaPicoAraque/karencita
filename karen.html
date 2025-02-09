@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feli Cumple Karencita :D</title>
+    <link rel="icon" type="image/x-icon" href="lana.ico">
+    <h1 style="text-align: right; margin-right: -900px; font-size: 16px; text-align: center" >
+        Oli Karencita, primero dale al sobre<br> y a la sorpresa que tiene <br>adentro y después al otro botón jskaj
+        <br> Feli cum :D    
+    </h1>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1c8ff;
+            flex-direction: column;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-image: url('lanaaa.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+
+        .envelope {
+            border: 8px solid #570000; /* Borde del sobre */
+            position: relative;
+            width: 220px;
+            height: 160px;
+            background: linear-gradient(145deg, #6e0000, #2b0004);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 0, 0, 0.3);
+        }
+
+
+
+        .button-container {
+             position: absolute;
+             left: -500px;
+             top: -10%;
+             transform: translateY(-50%);
+}
+
+        .reveal-button {
+            padding: 10px 15px;
+            font-family: 'Comic Sans MS', cursive;
+            background: rgb(250, 249, 249);
+            border: 2px solid black;
+            cursor: pointer;
+            border-radius: 5px;
+}
+
+        .hidden-text {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            font-family: 'Comic Sans MS', cursive;
+}
+
+
+
+
+        .flap {
+            border-top: 4px solid #3a0101; /* Borde de la solapa */
+            box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5); /* Difuminación roja */
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: #460303;
+
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .open .flap {
+
+            transform: rotateX(-180deg);
+            transform: rotateY(180deg);
+        
+        }
+
+        .message {
+            position: absolute;
+            bottom: 10px;
+            width: 180px;
+            height: 120px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .open .message {
+            opacity: 1;
+            transform: translateY(-180px);
+        }
+
+
+        .hidden-message {
+            position: absolute;
+            top: -100px;
+            background: #220101;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .closed .hidden-message {
+            display: block;
+        }
+
+        .message img {
+            width: 100px;
+            border: 3px solid black;
+            border-radius: 5px;
+            opacity: 0; /* Oculto al inicio */
+            position: absolute ;
+            top: 140%;
+            transition: opacity 0.5s ease-in-out;
+          }
+          
+          .open .message img {
+              opacity: 1; /* Se muestra cuando se abre el sobre */
+              display: block;
+          }
+
+          .message a {
+    display: inline-block;
+    padding: 8px 12px;
+    background: white; /* Fondo blanco */
+    color: black;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    border: 2px solid black; /* Borde negro */
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.message a:hover {
+    background: #c4c4c4;
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="background-color: white; color: black; padding: 5px; border: 2px solid black; border-radius: 5px; display: inline-block;">Que pasara si le das un toque al sobre :O </h1>
+    <div class="envelope" onclick="toggleEnvelope()">
+
+
+        <div class="button-container">
+            <button class="reveal-button" onclick="revealText()">Surprise :O❔</button>
+            <p class="hidden-text" id="hidden-text" style="background-color: white; color: black; padding: 5px; border: 2px solid black; border-radius: 5px;"> 
+                    
+                <td> karencita <br>
+                Feli Cumple a la más linda de todas<br> las lanitas lovers jsaks 
+                Te deseo todo<br> lo bonito en este tu <br>día y que lo<br> disfrutes  
+                junto a las personas<br> que más amas espero poder verte <br>
+                pronto para darte un fuerte abrazo  <br>
+                TKM muchísimo Karencita bella<br>  
+                Espero poder pasar más<br> cumpleaños junto a tu lado \(●'◡'●)/<br>  
+                Con todo el cariño ~~~ Aurita jsakjas </td>
+            
+            
+            </p>
+            
+
+        </div>
+
+
+        <div class="flap"></div>
+        <div class="tab"></div>
+        <div class="message">
+            <p>Feli Cumpleaños culona :D 💜🛐</p>
+            <img src="xd.gif" alt="Feliz Cumpleaños" width="150">
+            <a href="https://youtube.com/shorts/MgwXdeJhze0?si=GeKTsEX1dBnEi2fT" target="_blank">abreme owo</a>
+        </div>
+        <div class="hidden-message">No me cierres >:c</div>
+    </div>
+    <audio id="sound" src="lanita.mp3"></audio>
+    <script>
+        function toggleEnvelope() {
+            let envelope = document.querySelector('.envelope');
+            let messageBox = document.querySelector('.hidden-message');
+            
+            if (envelope.classList.contains('open')) {
+                envelope.classList.remove('open');
+                envelope.classList.add('closed');
+                messageBox.style.display = 'block';
+            } else {
+                envelope.classList.remove('closed');
+                envelope.classList.add('open');
+                messageBox.style.display = 'none';
+            }
+        }
+
+function revealText() {
+    let text = document.getElementById('hidden-text');
+    let sound = document.getElementById('sound');
+    
+    if (text.style.display === 'none') {
+        text.style.display = 'block';
+        sound.play();
+    } else {
+        text.style.display = 'none';
+        
+    }
+        }
+    </script>
+</body>
+</html>
+
